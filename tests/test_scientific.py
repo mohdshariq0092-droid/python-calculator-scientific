@@ -1,5 +1,6 @@
 from calculator.scientific import power, sqrt
 
+
 def test_power():
     assert power(2, 3) == 8
 
