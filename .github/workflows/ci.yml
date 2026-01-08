@@ -1,0 +1,10 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  pipeline:
+    uses: mohdshariq0092-droid/python-ci-framework/.github/workflows/python-pipeline.yml@v1
+    with:
+      project_type: "scientific"
+      deploy: false
