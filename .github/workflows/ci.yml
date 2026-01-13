@@ -1,6 +1,13 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+permissions:
+  contents: read
+  actions: read
 
 jobs:
   pipeline:
@@ -8,4 +15,8 @@ jobs:
     with:
       project_type: "scientific"
       main_module: "calculator"
+      test_path: tests
+      python_versions: '["3.10", "3.11", "3.12"]'
       deploy: false
+      run_lint: true
+      run_security: true
